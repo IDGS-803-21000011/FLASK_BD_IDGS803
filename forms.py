@@ -21,3 +21,17 @@ class UserForm(Form):
     correo = EmailField('correo', [
         validators.Email(message='Ingrese un correo válido.')
     ])
+
+class UserForm2(Form):
+    id = IntegerField('id')
+    nombre = StringField('nombre', [
+        validators.DataRequired(message='El campo es requerido.'),
+        validators.length(min=4, max=10, message='Ingresa un nombre válido.')
+    ])
+    apaterno = StringField('apaterno', [
+        validators.DataRequired(message='El campo es requerido.'),
+        validators.length(min=4, max=10, message='Ingresa un apellido paterno válido.')
+    ])
+    email = EmailField('correo', [
+        validators.Email(message='Ingrese un correo válido.')
+    ])
